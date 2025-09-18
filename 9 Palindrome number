@@ -1,0 +1,17 @@
+class Solution {
+    public boolean isPalindrome(int x) {
+        int rev_digit = 0;
+        int last_digit = 0;
+        int n = x;
+        if (x < 0) {
+            return false;
+        }
+        while(n!=0){
+            last_digit = n % 10;
+            n = n / 10;
+            rev_digit = (rev_digit * 10) + last_digit;
+        
+        }
+        return rev_digit == x;
+    }
+}
