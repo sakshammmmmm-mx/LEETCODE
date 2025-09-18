@@ -1,0 +1,18 @@
+class Solution {
+    public int reverse(int n) {
+        int rev_digit = 0;
+        int last_digit = 0;
+        while (n != 0){
+            last_digit = n % 10;
+            n = n / 10;
+
+            if (rev_digit > Integer.MAX_VALUE / 10 || (rev_digit == Integer.MAX_VALUE / 10 && last_digit > 7))
+                return 0;
+            if (rev_digit < Integer.MIN_VALUE / 10 || (rev_digit == Integer.MIN_VALUE / 10 && last_digit < -8))
+                return 0;
+              
+            rev_digit = (rev_digit * 10) + last_digit;
+        }
+        return rev_digit;
+    }
+}
